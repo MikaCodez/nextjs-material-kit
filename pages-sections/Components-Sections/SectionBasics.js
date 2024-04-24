@@ -72,7 +72,7 @@ export default function SectionBasics() {
     <div className={classes.sections}>
       <div className={classes.container}>
         <div className={classes.title}>
-          <h2>Basic Elements</h2>
+          <h2>LSN Elements</h2>
         </div>
         <div id="buttons">
           <div className={classes.title}>
@@ -120,7 +120,7 @@ export default function SectionBasics() {
               <small>Pick your color</small>
             </h3>
           </div>
-          <GridContainer justify="center">
+          {/* <GridContainer justify="center">
             <GridItem xs={12} sm={12} md={8}>
               <Button>Default</Button>
               <Button color="primary">Primary</Button>
@@ -130,7 +130,7 @@ export default function SectionBasics() {
               <Button color="danger">Danger</Button>
               <Button color="rose">Rose</Button>
             </GridItem>
-          </GridContainer>
+          </GridContainer> */}
         </div>
         <div className={classes.space50} />
         <div id="inputs">
