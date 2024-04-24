@@ -34,7 +34,7 @@ export default function ProfilePage(props) {
     <div>
       <Header
         color="transparent"
-        brand="NextJS Material Kit"
+        brand="LSN Global"
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
@@ -52,7 +52,7 @@ export default function ProfilePage(props) {
                 <div className={classes.profile}>
                   <div>
                     <img
-                      src="/img/faces/christian.jpg"
+                      src="/img/martin-raymond.webp"
                       alt="..."
                       className={imageClasses}
                     />
@@ -75,10 +75,10 @@ export default function ProfilePage(props) {
             </GridContainer>
             <div className={classes.description}>
               <p>
-                An artist of considerable range, Chet Faker — the name taken by
-                Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs
-                and records all of his own music, giving it a warm, intimate
-                feel with a solid groove structure.{" "}
+              Martin is co-founder of The Future Laboratory and editor-in-chief of LS:N Global.
+              Martin is a well-known trend guru, having written several best-selling books on
+              trend forecasting, including The Trend Forecaster’s Handbook and The Tomorrow People.
+              Martin contributes regularly as an expert on trends and business for the BBC, Channel 4 and ITV.{" "}
               </p>
             </div>
             <GridContainer justify="center">
@@ -120,39 +120,45 @@ export default function ProfilePage(props) {
                       )
                     },
                     {
-                      tabButton: "Work",
+                      tabButton: "Latest Articles By Martin",
                       tabIcon: Palette,
                       tabContent: (
                         <GridContainer justify="center">
                           <GridItem xs={12} sm={12} md={4}>
                             <img
                               alt="..."
-                              src="/img/examples/olu-eletu.jpg"
+                              src="/img/caroline.webp"
                               className={navImageClasses}
                             />
                             <img
                               alt="..."
-                              src="/img/examples/clem-onojeghuo.jpg"
+                              src="/img/drsusanne.webp"
                               className={navImageClasses}
                             />
                             <img
                               alt="..."
-                              src="/img/examples/cynthia-del-rio.jpg"
+                              src="/img/greatwealth.webp"
                               className={navImageClasses}
                             />
                           </GridItem>
                           <GridItem xs={12} sm={12} md={4}>
                             <img
                               alt="..."
-                              src="/img/examples/mariya-georgieva.jpg"
+                              src="/img/miminicklin.webp"
                               className={navImageClasses}
                             />
                             <img
                               alt="..."
-                              src="/img/examples/clem-onojegaw.jpg"
+                              src="/img/petercole.webp"
+                              className={navImageClasses}
+                            />
+                            <img
+                              alt="..."
+                              src="/img/sarahwilson.webp"
                               className={navImageClasses}
                             />
                           </GridItem>
+                          
                         </GridContainer>
                       )
                     },
