@@ -38,24 +38,24 @@ export default function SectionNavbars() {
               leftLinks={
                 <List className={classes.list}>
                   <ListItem className={classes.listItem}>
-                    <Button
+                    {/* <Button
                       href="#pablo"
                       className={classes.navLink}
                       onClick={(e) => e.preventDefault()}
                       color="transparent"
                     >
                       Link
-                    </Button>
+                    </Button> */}
                   </ListItem>
                   <ListItem className={classes.listItem}>
-                    <Button
+                    {/* <Button
                       href="#pablo"
                       className={classes.navLink}
                       onClick={(e) => e.preventDefault()}
                       color="transparent"
                     >
                       Link
-                    </Button>
+                    </Button> */}
                   </ListItem>
                   <ListItem className={classes.listItem}>
                     <CustomDropdown
@@ -67,9 +67,9 @@ export default function SectionNavbars() {
                         color: "transparent"
                       }}
                       dropdownList={[
-                        "Action",
-                        "Another action",
-                        "Something else here",
+                        "Macro Trends",
+                        "Micro Trends",
+                        "Design Directions",
                         { divider: true },
                         "Separated link",
                         { divider: true },

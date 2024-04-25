@@ -33,40 +33,40 @@ export default function SectionCarousel() {
               <Carousel {...settings}>
                 <div>
                   <img
-                    src="/img/bg.jpg"
+                    src="/img/23-04-24.webp"
                     alt="First slide"
                     className="slick-image"
                   />
                   <div className="slick-caption">
                     <h4>
                       <LocationOn className="slick-icons" />
-                      Yellowstone National Park, United States
+                      Spring 2024 research Teenagers
                     </h4>
                   </div>
                 </div>
                 <div>
                   <img
-                    src="/img/bg2.jpg"
+                    src="/img/24-04-24.webp"
                     alt="Second slide"
                     className="slick-image"
                   />
                   <div className="slick-caption">
                     <h4>
                       <LocationOn className="slick-icons" />
-                      Somewhere Beyond, United States
+                      US Millenials Astrology
                     </h4>
                   </div>
                 </div>
                 <div>
                   <img
-                    src="/img/bg3.jpg"
+                    src="/img/25-04-24.webp"
                     alt="Third slide"
                     className="slick-image"
                   />
                   <div className="slick-caption">
                     <h4>
                       <LocationOn className="slick-icons" />
-                      Yellowstone National Park, United States
+                      Red Meat for Sardines
                     </h4>
                   </div>
                 </div>

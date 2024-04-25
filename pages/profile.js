@@ -60,8 +60,9 @@ export default function ProfilePage(props) {
                   <div className={classes.name}>
                     <h3 className={classes.title}>Martin Raymond</h3>
                     <h6>Co-founder and editor-in-chief</h6>
-                    <Button justIcon link className={classes.margin5}>
+                    <Button justIcon link className={classes.margin5} >
                       <i className={"fab fa-twitter"} />
+                      
                     </Button>
                     <Button justIcon link className={classes.margin5}>
                       <i className={"fab fa-instagram"} />
@@ -88,31 +89,31 @@ export default function ProfilePage(props) {
                   color="primary"
                   tabs={[
                     {
-                      tabButton: "Studio",
+                      tabButton: "Podcasts",
                       tabIcon: Camera,
                       tabContent: (
                         <GridContainer justify="center">
                           <GridItem xs={12} sm={12} md={4}>
                             <img
                               alt="..."
-                              src="/img/examples/studio-1.jpg"
+                              src="/img/enam.webp"
                               className={navImageClasses}
                             />
                             <img
                               alt="..."
-                              src="/img/examples/studio-2.jpg"
+                              src="/img/dacher.webp"
                               className={navImageClasses}
                             />
                           </GridItem>
                           <GridItem xs={12} sm={12} md={4}>
                             <img
                               alt="..."
-                              src="/img/examples/studio-5.jpg"
+                              src="/img/henrycoutinho.webp"
                               className={navImageClasses}
                             />
                             <img
                               alt="..."
-                              src="/img/examples/studio-4.jpg"
+                              src="/img/ianjohnston.webp"
                               className={navImageClasses}
                             />
                           </GridItem>
@@ -170,29 +171,29 @@ export default function ProfilePage(props) {
                           <GridItem xs={12} sm={12} md={4}>
                             <img
                               alt="..."
-                              src="/img/examples/mariya-georgieva.jpg"
+                              src="/img/mobilecongress.webp"
                               className={navImageClasses}
                             />
                             <img
                               alt="..."
-                              src="/img/examples/studio-3.jpg"
+                              src="/img/video-size-copy.webp"
                               className={navImageClasses}
                             />
                           </GridItem>
                           <GridItem xs={12} sm={12} md={4}>
                             <img
                               alt="..."
-                              src="/img/examples/clem-onojeghuo.jpg"
+                              src="/img/atmosEra.webp"
                               className={navImageClasses}
                             />
                             <img
                               alt="..."
-                              src="/img/examples/olu-eletu.jpg"
+                              src="/img/bofprof.webp"
                               className={navImageClasses}
                             />
                             <img
                               alt="..."
-                              src="/img/examples/studio-1.jpg"
+                              src="/img/expo.webp"
                               className={navImageClasses}
                             />
                           </GridItem>

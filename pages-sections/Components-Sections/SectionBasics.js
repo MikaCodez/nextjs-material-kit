@@ -82,7 +82,7 @@ export default function SectionBasics() {
               <small>Pick your style</small>
             </h3>
           </div>
-          <GridContainer justify="center">
+          {/* <GridContainer justify="center">
             <GridItem xs={12} sm={12} md={8}>
               <Button color="primary">Default</Button>
               <Button color="primary" round>
@@ -119,7 +119,7 @@ export default function SectionBasics() {
             <h3>
               <small>Pick your color</small>
             </h3>
-          </div>
+          </div> */}
           {/* <GridContainer justify="center">
             <GridItem xs={12} sm={12} md={8}>
               <Button>Default</Button>
@@ -303,7 +303,7 @@ export default function SectionBasics() {
                   classes.checkboxAndRadioHorizontal
                 }
               >
-                <FormControlLabel
+                {/* <FormControlLabel
                   disabled
                   control={
                     <Checkbox
@@ -336,8 +336,8 @@ export default function SectionBasics() {
                   " " +
                   classes.checkboxAndRadioHorizontal
                 }
-              >
-                <FormControlLabel
+              > */}
+                {/* <FormControlLabel
                   control={
                     <Radio
                       checked={selectedEnabled === "a"}
@@ -362,7 +362,7 @@ export default function SectionBasics() {
                     root: classes.labelRoot
                   }}
                   label="First Radio"
-                />
+                /> */}
               </div>
               <div
                 className={
@@ -551,7 +551,7 @@ export default function SectionBasics() {
                 style={{ width: "45%", display: "inline-block" }}
               />
             </GridItem>
-            <GridItem xs={12} sm={12} md={6}>
+            {/* <GridItem xs={12} sm={12} md={6}>
               <div className={classes.title}>
                 <h3>Pagination</h3>
               </div>
@@ -580,7 +580,7 @@ export default function SectionBasics() {
                 ]}
                 color="info"
               />
-            </GridItem>
+            </GridItem> */}
           </GridContainer>
         </div>
         <div id="sliders">
@@ -593,7 +593,7 @@ export default function SectionBasics() {
               <br />
               <div id="sliderDouble" className="slider-info" />
             </GridItem>
-            <GridItem xs={12} sm={12} md={6}>
+            {/* <GridItem xs={12} sm={12} md={6}>
               <div className={classes.title}>
                 <h3>Badges</h3>
               </div>
@@ -604,7 +604,7 @@ export default function SectionBasics() {
               <Badge color="warning">warning</Badge>
               <Badge color="danger">danger</Badge>
               <Badge color="rose">rose</Badge>
-            </GridItem>
+            </GridItem> */}
           </GridContainer>
         </div>
       </div>

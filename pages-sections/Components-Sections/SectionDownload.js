@@ -27,19 +27,15 @@ export default function SectionDownload() {
             </h4>
           </GridItem>
           <GridItem xs={12} sm={8} md={6}>
-            <Button
+            {/* <Button
               color="primary"
               size="lg"
               href="https://www.creative-tim.com/product/nextjs-material-kit?ref=njsmk-download-section"
               target="_blank"
             >
               Free NextJS Download
-            </Button>
+            </Button> */}
             <Button
-              color="primary"
-              size="lg"
-              href="https://www.creative-tim.com/product/material-kit-react?ref=njsmk-download-section"
-              target="_blank"
             >
               Free React Downoad
             </Button>
@@ -49,7 +45,7 @@ export default function SectionDownload() {
         <br />
         <GridContainer className={classes.textCenter} justify="center">
           <GridItem xs={12} sm={12} md={8}>
-            <h2>Want more?</h2>
+            {/* <h2>Want more?</h2>
             <h4>
               We've just launched{" "}
               <a href="#pablo" onClick={(e) => e.preventDefault()}>
@@ -58,9 +54,9 @@ export default function SectionDownload() {
               .It has a huge number of components, sections and example pages.
               Start Your Development With A Badass Material-UI and NexJS Kit
               inspired by Material Design.
-            </h4>
+            </h4> */}
           </GridItem>
-          <GridItem xs={12} sm={8} md={10}>
+          {/* <GridItem xs={12} sm={8} md={10}>
             <Button
               color="rose"
               size="lg"
@@ -77,7 +73,7 @@ export default function SectionDownload() {
             >
               Material Kit PRO React
             </Button>
-          </GridItem>
+          </GridItem> */}
         </GridContainer>
         <div className={classes.textCenter + " " + classes.sharingArea}>
           <GridContainer justify="center">
