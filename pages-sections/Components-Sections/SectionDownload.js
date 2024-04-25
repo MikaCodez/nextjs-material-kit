@@ -18,7 +18,7 @@ export default function SectionDownload() {
       <div className={classes.container}>
         <GridContainer className={classes.textCenter} justify="center">
           <GridItem xs={12} sm={12} md={8}>
-            <h2>Do you love this UI Kit?</h2>
+            <h2>More Articles above</h2>
             <h4>
               Cause if you do, it can be yours for FREE. Hit the buttons below
               to navigate to our website where you can find the kit. We also
@@ -77,7 +77,7 @@ export default function SectionDownload() {
         </GridContainer>
         <div className={classes.textCenter + " " + classes.sharingArea}>
           <GridContainer justify="center">
-            <h3>Thank you for supporting us!</h3>
+           
           </GridContainer>
           <Button color="twitter">
             <i className={classes.socials + " fab fa-twitter"} /> Tweet

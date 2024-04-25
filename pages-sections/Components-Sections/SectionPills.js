@@ -23,7 +23,7 @@ export default function SectionPills() {
       <div className={classes.container}>
         <div id="navigation-pills">
           <div className={classes.title}>
-            <h3>Navigation Pills</h3>
+            <h3>Section Navigation</h3>
           </div>
           <div className={classes.title}>
             <h3>
@@ -41,25 +41,21 @@ export default function SectionPills() {
                     tabContent: (
                       <span>
                         <p>
-                          Collaboratively administrate empowered markets via
-                          plug-and-play networks. Dynamically procrastinate B2C
-                          users after installed base benefits.
+                        Encourage user-generated content creation by providing
+                        tools and incentives for viewers to contribute their own
+                        reactions, commentary or fan art during live-streams.
+                        This will foster a sense of community and ownership among users
                         </p>
                         <br />
                         <p>
-                          Dramatically visualize customer directed convergence
-                          without revolutionary ROI. Collaboratively
-                          administrate empowered markets via plug-and-play
-                          networks. Dynamically procrastinate B2C users after
-                          installed base benefits.
+                        Consider creating immersive brand experiences through exhibitions
+                        and showcases to engage customers on a deeper level and strengthen brand loyalty
                         </p>
                         <br />
                         <p>
-                          Dramatically visualize customer directed convergence
-                          without revolutionary ROI. Collaboratively
-                          administrate empowered markets via plug-and-play
-                          networks. Dynamically procrastinate B2C users after
-                          installed base benefits.
+                        As the non-alcoholic drinks market continues to grow, the travel and hospitality
+                        industry should consider how to seamlessly implement these drinks into all menus
+                        by offering pairing notes, seasonal variations and unique glassware
                         </p>
                       </span>
                     )

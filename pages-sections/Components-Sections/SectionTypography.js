@@ -27,7 +27,7 @@ export default function SectionTypography() {
       <div className={classes.container}>
         <div id="typography">
           <div className={classes.title}>
-            <h2>Typography</h2>
+            <h2>Technogym exhibition marks 40 years of innovation at Milan Design Week</h2>
           </div>
           <GridContainer>
             {/* <div className={classes.typo}>
@@ -129,14 +129,14 @@ export default function SectionTypography() {
                 billions of dollars, because I got the answers...
               </Danger>
             </div> */}
-            <div className={classes.typo}>
+            {/* <div className={classes.typo}>
               <div className={classes.note}>Small Tag</div>
               <h2>
                 Header with small subtitle
                 <br />
                 <Small>Use {'"Small"'} tag for the headers</Small>
               </h2>
-            </div>
+            </div> */}
           </GridContainer>
         </div>
         <div className={classes.space50} />
