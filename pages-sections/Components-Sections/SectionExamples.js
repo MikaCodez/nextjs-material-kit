@@ -24,7 +24,7 @@ export default function SectionExamples() {
             <Link href="/landing">
               <a className={classes.link}>
                 <img
-                  src="/img/landing.jpg"
+                  src="/img/LSN-platform.png"
                   alt="..."
                   className={
                     classes.imgRaised +
@@ -44,7 +44,7 @@ export default function SectionExamples() {
             <Link href="/profile">
               <a className={classes.link}>
                 <img
-                  src="/img/profile.jpg"
+                  src="/img/martinprofile.png"
                   alt="..."
                   className={
                     classes.imgRaised +

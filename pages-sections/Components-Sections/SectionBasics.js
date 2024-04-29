@@ -135,9 +135,9 @@ export default function SectionBasics() {
         <div className={classes.space50} />
         <div id="inputs">
           <div className={classes.title}>
-            <h3>Inputs</h3>
+            <h3>Multifaceted</h3>
           </div>
-          <GridContainer>
+          {/* <GridContainer>
             <GridItem xs={12} sm={4} md={4} lg={3}>
               <CustomInput
                 id="regular"
@@ -210,14 +210,14 @@ export default function SectionBasics() {
                 }}
               />
             </GridItem>
-          </GridContainer>
+          </GridContainer> */}
         </div>
         <div className={classes.space70} />
         <div id="checkRadios">
           <GridContainer>
             <GridItem xs={12} sm={6} md={4} lg={3}>
               <div className={classes.title}>
-                <h3>Checkboxes</h3>
+                
               </div>
               <div
                 className={
@@ -226,7 +226,7 @@ export default function SectionBasics() {
                   classes.checkboxAndRadioHorizontal
                 }
               >
-                <FormControlLabel
+                {/* <FormControlLabel
                   control={
                     <Checkbox
                       tabIndex={-1}
@@ -241,7 +241,7 @@ export default function SectionBasics() {
                   }
                   classes={{ label: classes.label, root: classes.labelRoot }}
                   label="Unchecked"
-                />
+                /> */}
               </div>
               <div
                 className={
@@ -250,7 +250,7 @@ export default function SectionBasics() {
                   classes.checkboxAndRadioHorizontal
                 }
               >
-                <FormControlLabel
+                {/* <FormControlLabel
                   control={
                     <Checkbox
                       tabIndex={-1}
@@ -266,7 +266,7 @@ export default function SectionBasics() {
                   }
                   classes={{ label: classes.label, root: classes.labelRoot }}
                   label="Checked"
-                />
+                /> */}
               </div>
               <div
                 className={
@@ -275,7 +275,7 @@ export default function SectionBasics() {
                   classes.checkboxAndRadioHorizontal
                 }
               >
-                <FormControlLabel
+                {/* <FormControlLabel
                   disabled
                   control={
                     <Checkbox
@@ -294,7 +294,7 @@ export default function SectionBasics() {
                     root: classes.labelRoot
                   }}
                   label="Disabled Unchecked"
-                />
+                /> */}
               </div>
               <div
                 className={
@@ -371,7 +371,7 @@ export default function SectionBasics() {
                   classes.checkboxAndRadioHorizontal
                 }
               >
-                <FormControlLabel
+                {/* <FormControlLabel
                   control={
                     <Radio
                       checked={selectedEnabled === "b"}
@@ -396,7 +396,7 @@ export default function SectionBasics() {
                     root: classes.labelRoot
                   }}
                   label="Second Radio"
-                />
+                /> */}
               </div>
               <div
                 className={
@@ -405,7 +405,7 @@ export default function SectionBasics() {
                   classes.checkboxAndRadioHorizontal
                 }
               >
-                <FormControlLabel
+                {/* <FormControlLabel
                   disabled
                   control={
                     <Radio
@@ -431,7 +431,7 @@ export default function SectionBasics() {
                     root: classes.labelRoot
                   }}
                   label="Disabled Unchecked Radio"
-                />
+                /> */}
               </div>
               <div
                 className={
@@ -440,7 +440,7 @@ export default function SectionBasics() {
                   classes.checkboxAndRadioHorizontal
                 }
               >
-                <FormControlLabel
+                {/* <FormControlLabel
                   disabled
                   control={
                     <Radio
@@ -463,10 +463,10 @@ export default function SectionBasics() {
                   }
                   classes={{ label: classes.label, root: classes.labelRoot }}
                   label="Disabled Checked Radio"
-                />
+                /> */}
               </div>
             </GridItem>
-            <GridItem xs={12} sm={6} md={4} lg={3}>
+            {/* <GridItem xs={12} sm={6} md={4} lg={3}>
               <div className={classes.title}>
                 <h3>Toggle Buttons</h3>
               </div>
@@ -512,13 +512,13 @@ export default function SectionBasics() {
                   label="Toggle is off"
                 />
               </div>
-            </GridItem>
+            </GridItem> */}
           </GridContainer>
         </div>
         <div className={classes.space70} />
         <div id="progress">
           <GridContainer>
-            <GridItem xs={12} sm={12} md={6}>
+            {/* <GridItem xs={12} sm={12} md={6}>
               <div className={classes.title}>
                 <h3>Progress Bars</h3>
               </div>
@@ -550,7 +550,7 @@ export default function SectionBasics() {
                 value={25}
                 style={{ width: "45%", display: "inline-block" }}
               />
-            </GridItem>
+            </GridItem> */}
             {/* <GridItem xs={12} sm={12} md={6}>
               <div className={classes.title}>
                 <h3>Pagination</h3>
