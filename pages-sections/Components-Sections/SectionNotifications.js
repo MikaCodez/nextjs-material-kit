@@ -18,10 +18,10 @@ export default function SectionNotifications() {
     <div className={classes.section} id="notifications">
       <div className={classes.container}>
         <div className={classes.title}>
-          <h3>Notifications</h3>
+          {/* <h3>Notifications</h3> */}
         </div>
       </div>
-      <SnackbarContent
+      {/* <SnackbarContent
         message={
           <span>
             <b>INFO ALERT:</b> You{"'"}ve got some friends nearby, stop looking
@@ -65,7 +65,7 @@ export default function SectionNotifications() {
         color="danger"
         icon="info_outline"
       />
-      <Clearfix />
+      <Clearfix /> */}
     </div>
   );
 }

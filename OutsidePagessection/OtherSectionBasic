@@ -1,0 +1,1490 @@
+import React from "react";
+// plugin that creates slider
+import Slider from "nouislider";
+// @material-ui/core components
+import { makeStyles } from "@material-ui/core/styles";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
+import Radio from "@material-ui/core/Radio";
+import Switch from "@material-ui/core/Switch";
+// @material-ui/icons
+import Favorite from "@material-ui/icons/Favorite";
+import People from "@material-ui/icons/People";
+import Check from "@material-ui/icons/Check";
+import FiberManualRecord from "@material-ui/icons/FiberManualRecord";
+// core components
+import GridContainer from "/components/Grid/GridContainer.js";
+import GridItem from "/components/Grid/GridItem.js";
+import Button from "/components/CustomButtons/Button.js";
+import CustomInput from "/components/CustomInput/CustomInput.js";
+import CustomLinearProgress from "/components/CustomLinearProgress/CustomLinearProgress.js";
+import Paginations from "/components/Pagination/Pagination.js";
+import Badge from "/components/Badge/Badge.js";
+
+import styles from "/styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle.js";
+
+const useStyles = makeStyles(styles);
+
+export default function SectionBasics() {
+  const classes = useStyles();
+  const [checked, setChecked] = React.useState([24, 22]);
+  const [selectedEnabled, setSelectedEnabled] = React.useState("b");
+  const [checkedA, setCheckedA] = React.useState(true);
+  const [checkedB, setCheckedB] = React.useState(false);
+  React.useEffect(() => {
+    if (
+      !document
+        .getElementById("sliderRegular")
+        .classList.contains("noUi-target")
+    ) {
+      Slider.create(document.getElementById("sliderRegular"), {
+        start: [40],
+        connect: [true, false],
+        step: 1,
+        range: { min: 0, max: 100 }
+      });
+    }
+    if (
+      !document.getElementById("sliderDouble").classList.contains("noUi-target")
+    ) {
+      Slider.create(document.getElementById("sliderDouble"), {
+        start: [20, 60],
+        connect: [false, true, false],
+        step: 1,
+        range: { min: 0, max: 100 }
+      });
+    }
+    return function cleanup() {};
+  });
+  const handleToggle = (value) => {
+    const currentIndex = checked.indexOf(value);
+    const newChecked = [...checked];
+
+    if (currentIndex === -1) {
+      newChecked.push(value);
+    } else {
+      newChecked.splice(currentIndex, 1);
+    }
+    setChecked(newChecked);
+  };
+  return (
+    <div className={classes.sections}>
+      <div className={classes.container}>
+        <div className={classes.title}>
+          <h2>LSN Elements</h2>
+        </div>
+        <div id="buttons">
+          <div className={classes.title}>
+            <h3>
+              Buttons
+              <br />
+              <small>Pick your style</small>
+            </h3>
+          </div>
+          {/* <GridContainer justify="center">
+            <GridItem xs={12} sm={12} md={8}>
+              <Button color="primary">Default</Button>
+              <Button color="primary" round>
+                round
+              </Button>
+              <Button color="primary" round>
+                <Favorite className={classes.icons} /> with icon
+              </Button>
+              <Button justIcon round color="primary">
+                <Favorite className={classes.icons} />
+              </Button>
+              <Button color="primary" simple>
+                simple
+              </Button>
+            </GridItem>
+          </GridContainer>
+          <div className={classes.title}>
+            <h3>
+              <small>Pick your size</small>
+            </h3>
+          </div>
+          <GridContainer justify="center">
+            <GridItem xs={12} sm={12} md={8}>
+              <Button color="primary" size="sm">
+                Small
+              </Button>
+              <Button color="primary">Regular</Button>
+              <Button color="primary" size="lg">
+                Large
+              </Button>
+            </GridItem>
+          </GridContainer>
+          <div className={classes.title}>
+            <h3>
+              <small>Pick your color</small>
+            </h3>
+          </div> */}
+          {/* <GridContainer justify="center">
+            <GridItem xs={12} sm={12} md={8}>
+              <Button>Default</Button>
+              <Button color="primary">Primary</Button>
+              <Button color="info">Info</Button>
+              <Button color="success">Success</Button>
+              <Button color="warning">Warning</Button>
+              <Button color="danger">Danger</Button>
+              <Button color="rose">Rose</Button>
+            </GridItem>
+          </GridContainer> */}
+        </div>
+        <div className={classes.space50} />
+        <div id="inputs">
+          <div className={classes.title}>
+            <h3>Multifaceted</h3>
+          </div>
+          {/* <GridContainer>
+            <GridItem xs={12} sm={4} md={4} lg={3}>
+              <CustomInput
+                id="regular"
+                inputProps={{
+                  placeholder: "Regular"
+                }}
+                formControlProps={{
+                  fullWidth: true
+                }}
+              />
+            </GridItem>
+            <GridItem xs={12} sm={4} md={4} lg={3}>
+              <CustomInput
+                labelText="With floating label"
+                id="float"
+                formControlProps={{
+                  fullWidth: true
+                }}
+              />
+            </GridItem>
+            <GridItem xs={12} sm={4} md={4} lg={3}>
+              <CustomInput
+                labelText="Success input"
+                id="success"
+                success
+                formControlProps={{
+                  fullWidth: true
+                }}
+              />
+            </GridItem>
+            <GridItem xs={12} sm={4} md={4} lg={3}>
+              <CustomInput
+                labelText="Error input"
+                id="error"
+                error
+                formControlProps={{
+                  fullWidth: true
+                }}
+              />
+            </GridItem>
+            <GridItem xs={12} sm={4} md={4} lg={3}>
+              <CustomInput
+                labelText="With material Icons"
+                id="material"
+                formControlProps={{
+                  fullWidth: true
+                }}
+                inputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <People />
+                    </InputAdornment>
+                  )
+                }}
+              />
+            </GridItem>
+            <GridItem xs={12} sm={4} md={4} lg={3}>
+              <CustomInput
+                labelText="With Font Awesome Icons"
+                id="font-awesome"
+                formControlProps={{
+                  fullWidth: true
+                }}
+                inputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <i className="fas fa-users" />
+                    </InputAdornment>
+                  )
+                }}
+              />
+            </GridItem>
+          </GridContainer> */}
+        </div>
+        <div className={classes.space70} />
+        <div id="checkRadios">
+          <GridContainer>
+            <GridItem xs={12} sm={6} md={4} lg={3}>
+              <div className={classes.title}>
+                
+              </div>
+              <div
+                className={
+                  classes.checkboxAndRadio +
+                  " " +
+                  classes.checkboxAndRadioHorizontal
+                }
+              >
+                {/* <FormControlLabel
+                  control={
+                    <Checkbox
+                      tabIndex={-1}
+                      onClick={() => handleToggle(21)}
+                      checkedIcon={<Check className={classes.checkedIcon} />}
+                      icon={<Check className={classes.uncheckedIcon} />}
+                      classes={{
+                        checked: classes.checked,
+                        root: classes.checkRoot
+                      }}
+                    />
+                  }
+                  classes={{ label: classes.label, root: classes.labelRoot }}
+                  label="Unchecked"
+                /> */}
+              </div>
+              <div
+                className={
+                  classes.checkboxAndRadio +
+                  " " +
+                  classes.checkboxAndRadioHorizontal
+                }
+              >
+                {/* <FormControlLabel
+                  control={
+                    <Checkbox
+                      tabIndex={-1}
+                      onClick={() => handleToggle(22)}
+                      checked={checked.indexOf(22) !== -1 ? true : false}
+                      checkedIcon={<Check className={classes.checkedIcon} />}
+                      icon={<Check className={classes.uncheckedIcon} />}
+                      classes={{
+                        checked: classes.checked,
+                        root: classes.checkRoot
+                      }}
+                    />
+                  }
+                  classes={{ label: classes.label, root: classes.labelRoot }}
+                  label="Checked"
+                /> */}
+              </div>
+              <div
+                className={
+                  classes.checkboxAndRadio +
+                  " " +
+                  classes.checkboxAndRadioHorizontal
+                }
+              >
+                {/* <FormControlLabel
+                  disabled
+                  control={
+                    <Checkbox
+                      tabIndex={-1}
+                      checkedIcon={<Check className={classes.checkedIcon} />}
+                      icon={<Check className={classes.uncheckedIcon} />}
+                      classes={{
+                        checked: classes.checked,
+                        root: classes.checkRoot
+                      }}
+                    />
+                  }
+                  classes={{
+                    label: classes.label,
+                    disabled: classes.disabledCheckboxAndRadio,
+                    root: classes.labelRoot
+                  }}
+                  label="Disabled Unchecked"
+                /> */}
+              </div>
+              <div
+                className={
+                  classes.checkboxAndRadio +
+                  " " +
+                  classes.checkboxAndRadioHorizontal
+                }
+              >
+                {/* <FormControlLabel
+                  disabled
+                  control={
+                    <Checkbox
+                      tabIndex={-1}
+                      checked={checked.indexOf(24) !== -1 ? true : false}
+                      checkedIcon={<Check className={classes.checkedIcon} />}
+                      icon={<Check className={classes.uncheckedIcon} />}
+                      classes={{
+                        checked: classes.checked,
+                        root: classes.checkRoot
+                      }}
+                    />
+                  }
+                  classes={{
+                    label: classes.label,
+                    disabled: classes.disabledCheckboxAndRadio,
+                    root: classes.labelRoot
+                  }}
+                  label="Disabled Checked"
+                />
+              </div>
+            </GridItem>
+            <GridItem xs={12} sm={6} md={4} lg={3}>
+              <div className={classes.title}>
+                <h3>Radio Buttons</h3>
+              </div>
+              <div
+                className={
+                  classes.checkboxAndRadio +
+                  " " +
+                  classes.checkboxAndRadioHorizontal
+                }
+              > */}
+                {/* <FormControlLabel
+                  control={
+                    <Radio
+                      checked={selectedEnabled === "a"}
+                      onChange={() => setSelectedEnabled("a")}
+                      value="a"
+                      name="radio button enabled"
+                      aria-label="A"
+                      icon={
+                        <FiberManualRecord className={classes.radioUnchecked} />
+                      }
+                      checkedIcon={
+                        <FiberManualRecord className={classes.radioChecked} />
+                      }
+                      classes={{
+                        checked: classes.radio,
+                        root: classes.radioRoot
+                      }}
+                    />
+                  }
+                  classes={{
+                    label: classes.label,
+                    root: classes.labelRoot
+                  }}
+                  label="First Radio"
+                /> */}
+              </div>
+              <div
+                className={
+                  classes.checkboxAndRadio +
+                  " " +
+                  classes.checkboxAndRadioHorizontal
+                }
+              >
+                {/* <FormControlLabel
+                  control={
+                    <Radio
+                      checked={selectedEnabled === "b"}
+                      onChange={() => setSelectedEnabled("b")}
+                      value="b"
+                      name="radio button enabled"
+                      aria-label="B"
+                      icon={
+                        <FiberManualRecord className={classes.radioUnchecked} />
+                      }
+                      checkedIcon={
+                        <FiberManualRecord className={classes.radioChecked} />
+                      }
+                      classes={{
+                        checked: classes.radio,
+                        root: classes.radioRoot
+                      }}
+                    />
+                  }
+                  classes={{
+                    label: classes.label,
+                    root: classes.labelRoot
+                  }}
+                  label="Second Radio"
+                /> */}
+              </div>
+              <div
+                className={
+                  classes.checkboxAndRadio +
+                  " " +
+                  classes.checkboxAndRadioHorizontal
+                }
+              >
+                {/* <FormControlLabel
+                  disabled
+                  control={
+                    <Radio
+                      checked={false}
+                      value="a"
+                      name="radio button disabled"
+                      aria-label="B"
+                      icon={
+                        <FiberManualRecord className={classes.radioUnchecked} />
+                      }
+                      checkedIcon={
+                        <FiberManualRecord className={classes.radioChecked} />
+                      }
+                      classes={{
+                        checked: classes.radio,
+                        disabled: classes.disabledCheckboxAndRadio,
+                        root: classes.radioRoot
+                      }}
+                    />
+                  }
+                  classes={{
+                    label: classes.label,
+                    root: classes.labelRoot
+                  }}
+                  label="Disabled Unchecked Radio"
+                /> */}
+              </div>
+              <div
+                className={
+                  classes.checkboxAndRadio +
+                  " " +
+                  classes.checkboxAndRadioHorizontal
+                }
+              >
+                {/* <FormControlLabel
+                  disabled
+                  control={
+                    <Radio
+                      checked={true}
+                      value="b"
+                      name="radio button disabled"
+                      aria-label="B"
+                      icon={
+                        <FiberManualRecord className={classes.radioUnchecked} />
+                      }
+                      checkedIcon={
+                        <FiberManualRecord className={classes.radioChecked} />
+                      }
+                      classes={{
+                        checked: classes.radio,
+                        disabled: classes.disabledCheckboxAndRadio,
+                        root: classes.radioRoot
+                      }}
+                    />
+                  }
+                  classes={{ label: classes.label, root: classes.labelRoot }}
+                  label="Disabled Checked Radio"
+                /> */}
+              </div>
+            </GridItem>
+            {/* <GridItem xs={12} sm={6} md={4} lg={3}>
+              <div className={classes.title}>
+                <h3>Toggle Buttons</h3>
+              </div>
+              <div>
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={checkedA}
+                      onChange={(event) => setCheckedA(event.target.checked)}
+                      value="checkedA"
+                      classes={{
+                        switchBase: classes.switchBase,
+                        checked: classes.switchChecked,
+                        thumb: classes.switchIcon,
+                        track: classes.switchBar
+                      }}
+                    />
+                  }
+                  classes={{
+                    label: classes.label
+                  }}
+                  label="Toggle is on"
+                />
+              </div>
+              <div>
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={checkedB}
+                      onChange={(event) => setCheckedB(event.target.checked)}
+                      value="checkedB"
+                      classes={{
+                        switchBase: classes.switchBase,
+                        checked: classes.switchChecked,
+                        thumb: classes.switchIcon,
+                        track: classes.switchBar
+                      }}
+                    />
+                  }
+                  classes={{
+                    label: classes.label
+                  }}
+                  label="Toggle is off"
+                />
+              </div>
+            </GridItem> */}
+          </GridContainer>
+        </div>
+        <div className={classes.space70} />
+        <div id="progress">
+          <GridContainer>
+            {/* <GridItem xs={12} sm={12} md={6}>
+              <div className={classes.title}>
+                <h3>Progress Bars</h3>
+              </div>
+              <CustomLinearProgress
+                variant="determinate"
+                color="primary"
+                value={30}
+              />
+              <CustomLinearProgress
+                variant="determinate"
+                color="info"
+                value={60}
+              />
+              <CustomLinearProgress
+                variant="determinate"
+                color="success"
+                value={100}
+                style={{ width: "35%", display: "inline-block" }}
+              />
+              <CustomLinearProgress
+                variant="determinate"
+                color="warning"
+                value={100}
+                style={{ width: "20%", display: "inline-block" }}
+              />
+              <CustomLinearProgress
+                variant="determinate"
+                color="danger"
+                value={25}
+                style={{ width: "45%", display: "inline-block" }}
+              />
+            </GridItem> */}
+            {/* <GridItem xs={12} sm={12} md={6}>
+              <div className={classes.title}>
+                <h3>Pagination</h3>
+              </div>
+              <Paginations
+                pages={[
+                  { text: 1 },
+                  { text: "..." },
+                  { text: 5 },
+                  { text: 6 },
+                  { active: true, text: 7 },
+                  { text: 8 },
+                  { text: 9 },
+                  { text: "..." },
+                  { text: 12 }
+                ]}
+              />
+              <Paginations
+                pages={[
+                  { text: "PREV" },
+                  { text: 1 },
+                  { text: 2 },
+                  { active: true, text: 3 },
+                  { text: 4 },
+                  { text: 5 },
+                  { text: "NEXT" }
+                ]}
+                color="info"
+              />
+            </GridItem> */}
+          </GridContainer>
+        </div>
+        <div id="sliders">
+          <GridContainer>
+            <GridItem xs={12} sm={12} md={6}>
+              <div className={classes.title}>
+                <h3>Sliders</h3>
+              </div>
+              <div id="sliderRegular" className="slider-primary" />
+              <br />
+              <div id="sliderDouble" className="slider-info" />
+            </GridItem>
+            {/* <GridItem xs={12} sm={12} md={6}>
+              <div className={classes.title}>
+                <h3>Badges</h3>
+              </div>
+              <Badge>default</Badge>
+              <Badge color="primary">primary</Badge>
+              <Badge color="info">info</Badge>
+              <Badge color="success">success</Badge>
+              <Badge color="warning">warning</Badge>
+              <Badge color="danger">danger</Badge>
+              <Badge color="rose">rose</Badge>
+            </GridItem> */}
+          </GridContainer>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+(SectionBasics.js Above)
+--------------------
+
+(SectionNavBars.js below)
+
+import React from "react";
+// @material-ui/core components
+import { makeStyles } from "@material-ui/core/styles";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import Icon from "@material-ui/core/Icon";
+// @material-ui/icons
+import Search from "@material-ui/icons/Search";
+import Email from "@material-ui/icons/Email";
+import Face from "@material-ui/icons/Face";
+import AccountCircle from "@material-ui/icons/AccountCircle";
+import Explore from "@material-ui/icons/Explore";
+// core components
+import GridContainer from "/components/Grid/GridContainer.js";
+import GridItem from "/components/Grid/GridItem.js";
+import Header from "/components/Header/Header.js";
+import CustomInput from "/components/CustomInput/CustomInput.js";
+import CustomDropdown from "/components/CustomDropdown/CustomDropdown.js";
+import Button from "/components/CustomButtons/Button.js";
+
+import styles from "/styles/jss/nextjs-material-kit/pages/componentsSections/navbarsStyle.js";
+import SectionNotifications from "../pages-sections/Components-Sections/SectionNotifications";
+
+const useStyles = makeStyles(styles);
+
+export default function SectionNavbars() {
+  const classes = useStyles();
+  return (
+    <div className={classes.section}>
+      <div className={classes.container}>
+        <GridContainer>
+          <GridItem xs={12} sm={12} md={6}>
+            <div className={classes.title}>
+              <h3>Menu</h3>
+            </div>
+            <Header
+              brand="Menu"
+              color="primary"
+              leftLinks={
+                <List className={classes.list}>
+                  <ListItem className={classes.listItem}>
+                    {/* <Button
+                      href="#pablo"
+                      className={classes.navLink}
+                      onClick={(e) => e.preventDefault()}
+                      color="transparent"
+                    >
+                      Link
+                    </Button> */}
+                  </ListItem>
+                  <ListItem className={classes.listItem}>
+                    {/* <Button
+                      href="#pablo"
+                      className={classes.navLink}
+                      onClick={(e) => e.preventDefault()}
+                      color="transparent"
+                    >
+                      Link
+                    </Button> */}
+                  </ListItem>
+                  <ListItem className={classes.listItem}>
+                    <CustomDropdown
+                      navDropdown
+                      buttonText="Dropdown"
+                      dropdownHeader="Dropdown Header"
+                      buttonProps={{
+                        className: classes.navLink,
+                        color: "transparent"
+                      }}
+                      dropdownList={[
+                        "Macro Trends",
+                        "Micro Trends",
+                        "Design Directions",
+                        { divider: true },
+                        "Separated link",
+                        { divider: true },
+                        "One more separated link"
+                      ]}
+                    />
+                  </ListItem>
+                </List>
+              }
+            />
+          </GridItem>
+          <GridItem xs={12} sm={12} md={6}>
+            <div className={classes.title}>
+              <h3>Menu with Icons</h3>
+            </div>
+            <Header
+              brand="Icons"
+              color="info"
+              rightLinks={
+                <List className={classes.list}>
+                  <ListItem className={classes.listItem}>
+                    <Button color="transparent" className={classes.navLink}>
+                      <Email className={classes.icons} />
+                    </Button>
+                  </ListItem>
+                  <ListItem className={classes.listItem}>
+                    <Button color="transparent" className={classes.navLink}>
+                      <Face className={classes.icons} />
+                    </Button>
+                  </ListItem>
+                  <ListItem className={classes.listItem}>
+                    <CustomDropdown
+                      left
+                      navDropdown
+                      hoverColor="info"
+                      dropdownHeader="Dropdown Header"
+                      buttonIcon="settings"
+                      buttonProps={{
+                        className: classes.navLink,
+                        color: "transparent"
+                      }}
+                      dropdownList={[
+                        "Action",
+                        "Another action",
+                        "Something else here",
+                        { divider: true },
+                        "Separated link",
+                        { divider: true },
+                        "One more separated link"
+                      ]}
+                    />
+                  </ListItem>
+                </List>
+              }
+            />
+          </GridItem>
+        </GridContainer>
+        <div className={classes.title}>
+          <h3>Navigation</h3>
+        </div>
+      </div>
+      <div id="navbar" className={classes.navbar}>
+        <div
+          className={classes.navigation}
+          style={{ backgroundImage: "url('/img/bg.jpg')" }}
+        >
+          {/* <Header
+            brand="Brand"
+            color="rose"
+            leftLinks={
+              <List className={classes.list}>
+                <ListItem className={classes.listItem}>
+                  <Button
+                    href="#pablo"
+                    className={classes.navLink}
+                    onClick={(e) => e.preventDefault()}
+                    color="transparent"
+                  >
+                    Link
+                  </Button>
+                </ListItem>
+                <ListItem className={classes.listItem}>
+                  <Button
+                    href="#pablo"
+                    className={classes.navLink}
+                    onClick={(e) => e.preventDefault()}
+                    color="transparent"
+                  >
+                    Link
+                  </Button>
+                </ListItem>
+              </List>
+            }
+            rightLinks={
+              <div>
+                <CustomInput
+                  white
+                  inputRootCustomClasses={classes.inputRootCustomClasses}
+                  formControlProps={{
+                    className: classes.formControl
+                  }}
+                  inputProps={{
+                    placeholder: "Search",
+                    inputProps: {
+                      "aria-label": "Search",
+                      className: classes.searchInput
+                    }
+                  }}
+                />
+                <Button justIcon round color="white">
+                  <Search className={classes.searchIcon} />
+                </Button>
+              </div>
+            }
+          /> */}
+          {/* <Header
+            brand="Info Color"
+            color="info"
+            rightLinks={
+              <List className={classes.list}>
+                <ListItem className={classes.listItem}>
+                  <Button
+                    href="#pablo"
+                    className={classes.navLink + " " + classes.navLinkActive}
+                    onClick={(e) => e.preventDefault()}
+                    color="transparent"
+                  >
+                    Discover
+                  </Button>
+                </ListItem>
+                <ListItem className={classes.listItem}>
+                  <Button
+                    href="#pablo"
+                    className={classes.navLink}
+                    onClick={(e) => e.preventDefault()}
+                    color="transparent"
+                  >
+                    Profile
+                  </Button>
+                </ListItem>
+                <ListItem className={classes.listItem}>
+                  <Button
+                    href="#pablo"
+                    className={classes.navLink}
+                    onClick={(e) => e.preventDefault()}
+                    color="transparent"
+                  >
+                    Settings
+                  </Button>
+                </ListItem>
+              </List>
+            }
+          /> */}
+          {/* <Header
+            brand="Primary Color"
+            color="primary"
+            rightLinks={
+              <List className={classes.list}>
+                <ListItem className={classes.listItem}>
+                  <Button
+                    href="#pablo"
+                    className={classes.navLink + " " + classes.navLinkActive}
+                    onClick={(e) => e.preventDefault()}
+                    color="transparent"
+                  >
+                    <Explore className={classes.icons} /> Discover
+                  </Button>
+                </ListItem>
+                <ListItem className={classes.listItem}>
+                  <Button
+                    href="#pablo"
+                    className={classes.navLink}
+                    onClick={(e) => e.preventDefault()}
+                    color="transparent"
+                  >
+                    <AccountCircle className={classes.icons} /> Profile
+                  </Button>
+                </ListItem>
+                <ListItem className={classes.listItem}>
+                  <Button
+                    href="#pablo"
+                    className={classes.navLink}
+                    onClick={(e) => e.preventDefault()}
+                    color="transparent"
+                  >
+                    <Icon className={classes.icons}>settings</Icon> Settings
+                  </Button>
+                </ListItem>
+              </List>
+            }
+          /> */}
+          {/* <Header
+            brand="Navbar with notifications"
+            color="dark"
+            rightLinks={
+              <List className={classes.list}>
+                <ListItem className={classes.listItem}>
+                  <Button
+                    href="#pablo"
+                    className={classes.navLink}
+                    onClick={(e) => e.preventDefault()}
+                    color="transparent"
+                  >
+                    Discover
+                  </Button>
+                </ListItem>
+                <ListItem className={classes.listItem}>
+                  <Button
+                    href="#pablo"
+                    className={classes.navLink}
+                    onClick={(e) => e.preventDefault()}
+                    color="transparent"
+                  >
+                    Wishlist
+                  </Button>
+                </ListItem>
+                <ListItem className={classes.listItem}>
+                  <Button
+                    justIcon
+                    round
+                    href="#pablo"
+                    className={classes.notificationNavLink}
+                    onClick={(e) => e.preventDefault()}
+                    color="rose"
+                  >
+                    <Email className={classes.icons} />
+                  </Button>
+                </ListItem>
+                <ListItem className={classes.listItem}>
+                  <CustomDropdown
+                    left
+                    caret={false}
+                    hoverColor="black"
+                    dropdownHeader="Dropdown Header"
+                    buttonText={
+                      <img
+                        src="/img/faces/avatar.jpg"
+                        className={classes.img}
+                        alt="profile"
+                      />
+                    }
+                    buttonProps={{
+                      className:
+                        classes.navLink + " " + classes.imageDropdownButton,
+                      color: "transparent"
+                    }}
+                    dropdownList={[
+                      "Me",
+                      "Settings and other stuff",
+                      "Sign out"
+                    ]}
+                  />
+                </ListItem>
+              </List>
+            }
+          /> */}
+          {/* <Header
+            brand="Navbar with profile"
+            rightLinks={
+              <List className={classes.list}>
+                <ListItem className={classes.listItem}>
+                  <Button
+                    href="#pablo"
+                    className={classes.navLink}
+                    onClick={(e) => e.preventDefault()}
+                    color="transparent"
+                  >
+                    Discover
+                  </Button>
+                </ListItem>
+                <ListItem className={classes.listItem}>
+                  <Button
+                    href="#pablo"
+                    className={classes.navLink}
+                    onClick={(e) => e.preventDefault()}
+                    color="transparent"
+                  >
+                    Wishlist
+                  </Button>
+                </ListItem>
+                <ListItem className={classes.listItem}>
+                  <Button
+                    href="#pablo"
+                    className={classes.registerNavLink}
+                    onClick={(e) => e.preventDefault()}
+                    color="rose"
+                    round
+                  >
+                    Register
+                  </Button>
+                </ListItem>
+              </List>
+            }
+          /> */}
+          {/* <Header
+            brand="Transparent"
+            color="transparent"
+            rightLinks={
+              <List className={classes.list}>
+                <ListItem className={classes.listItem}>
+                  <Button
+                    color="transparent"
+                    className={
+                      classes.navLink + " " + classes.socialIconsButton
+                    }
+                  >
+                    <i
+                      className={
+                        classes.socialIcons +
+                        " " +
+                        classes.marginRight5 +
+                        " fab fa-twitter"
+                      }
+                    />{" "}
+                    Twitter
+                  </Button>
+                </ListItem>
+                <ListItem className={classes.listItem}>
+                  <Button
+                    color="transparent"
+                    className={
+                      classes.navLink + " " + classes.socialIconsButton
+                    }
+                  >
+                    <i
+                      className={
+                        classes.socialIcons +
+                        " " +
+                        classes.marginRight5 +
+                        " fab fa-facebook"
+                      }
+                    />{" "}
+                    Facebook
+                  </Button>
+                </ListItem>
+                <ListItem className={classes.listItem}>
+                  <Button
+                    color="transparent"
+                    className={
+                      classes.navLink + " " + classes.socialIconsButton
+                    }
+                  >
+                    <i
+                      className={
+                        classes.socialIcons +
+                        " " +
+                        classes.marginRight5 +
+                        " fab fa-instagram"
+                      }
+                    />{" "}
+                    Instagram
+                  </Button>
+                </ListItem>
+              </List>
+            }
+          /> */}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+--------------------------------------------------
+(SectionNotifications.js below)
+
+import React from "react";
+// @material-ui/core components
+import { makeStyles } from "@material-ui/core/styles";
+// @material-ui/icons
+import Check from "@material-ui/icons/Check";
+import Warning from "@material-ui/icons/Warning";
+// core components
+import SnackbarContent from "/components/Snackbar/SnackbarContent.js";
+import Clearfix from "/components/Clearfix/Clearfix.js";
+
+import styles from "/styles/jss/nextjs-material-kit/pages/componentsSections/notificationsStyles.js";
+import SectionJavascript from "../pages-sections/Components-Sections/SectionJavascript";
+
+const useStyles = makeStyles(styles);
+
+export default function SectionNotifications() {
+  const classes = useStyles();
+  return (
+    <div className={classes.section} id="notifications">
+      <div className={classes.container}>
+        <div className={classes.title}>
+          {/* <h3>Notifications</h3> */}
+        </div>
+      </div>
+      {/* <SnackbarContent
+        message={
+          <span>
+            <b>INFO ALERT:</b> You{"'"}ve got some friends nearby, stop looking
+            at your phone and find them...
+          </span>
+        }
+        close
+        color="info"
+        icon="info_outline"
+      />
+      <SnackbarContent
+        message={
+          <span>
+            <b>SUCCESS ALERT:</b> You{"'"}ve got some friends nearby, stop
+            looking at your phone and find them...
+          </span>
+        }
+        close
+        color="success"
+        icon={Check}
+      />
+      <SnackbarContent
+        message={
+          <span>
+            <b>WARNING ALERT:</b> You{"'"}ve got some friends nearby, stop
+            looking at your phone and find them...
+          </span>
+        }
+        close
+        color="warning"
+        icon={Warning}
+      />
+      <SnackbarContent
+        message={
+          <span>
+            <b>DANGER ALERT:</b> You{"'"}ve got some friends nearby, stop
+            looking at your phone and find them...
+          </span>
+        }
+        close
+        color="danger"
+        icon="info_outline"
+      />
+      <Clearfix /> */}
+    </div>
+  );
+}
+
+-------------------------------------------------------------
+(SectionJavascript.js below)
+
+import React from "react";
+// react plugin for creating date-time-picker
+import Datetime from "react-datetime";
+// @material-ui/core components
+import { makeStyles } from "@material-ui/core/styles";
+import Slide from "@material-ui/core/Slide";
+import IconButton from "@material-ui/core/IconButton";
+import Dialog from "@material-ui/core/Dialog";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogActions from "@material-ui/core/DialogActions";
+import InputLabel from "@material-ui/core/InputLabel";
+import FormControl from "@material-ui/core/FormControl";
+import Tooltip from "@material-ui/core/Tooltip";
+import Popover from "@material-ui/core/Popover";
+// @material-ui/icons
+import LibraryBooks from "@material-ui/icons/LibraryBooks";
+import Close from "@material-ui/icons/Close";
+// core components
+import GridContainer from "/components/Grid/GridContainer.js";
+import GridItem from "/components/Grid/GridItem.js";
+import Button from "/components/CustomButtons/Button.js";
+
+import styles from "/styles/jss/nextjs-material-kit/pages/componentsSections/javascriptStyles.js";
+import SectionPills from "../pages-sections/Components-Sections/SectionPills";
+
+const useStyles = makeStyles(styles);
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="down" ref={ref} {...props} />;
+});
+
+Transition.displayName = "Transition";
+
+export default function SectionJavascript() {
+  const classes = useStyles();
+  const [anchorElLeft, setAnchorElLeft] = React.useState(null);
+  const [anchorElTop, setAnchorElTop] = React.useState(null);
+  const [anchorElBottom, setAnchorElBottom] = React.useState(null);
+  const [anchorElRight, setAnchorElRight] = React.useState(null);
+  const [classicModal, setClassicModal] = React.useState(false);
+  return (
+    <div className={classes.section}>
+      <div className={classes.container}>
+        <div className={classes.title}>
+          <h2>Javascript components</h2>
+        </div>
+        <GridContainer>
+          <GridItem xs={12} sm={12} md={6}>
+            <div className={classes.title}>
+              <h3>Modal</h3>
+            </div>
+            <GridContainer>
+              {/* <GridItem xs={12} sm={12} md={6} lg={4}>
+                <Button
+                  color="primary"
+                  block
+                  onClick={() => setClassicModal(true)}
+                >
+                  <LibraryBooks className={classes.icon} />
+                  Classic
+                </Button>
+                <Dialog
+                  classes={{
+                    root: classes.center,
+                    paper: classes.modal
+                  }}
+                  open={classicModal}
+                  TransitionComponent={Transition}
+                  keepMounted
+                  onClose={() => setClassicModal(false)}
+                  aria-labelledby="classic-modal-slide-title"
+                  aria-describedby="classic-modal-slide-description"
+                >
+                  <DialogTitle
+                    id="classic-modal-slide-title"
+                    disableTypography
+                    className={classes.modalHeader}
+                  >
+                    <IconButton
+                      className={classes.modalCloseButton}
+                      key="close"
+                      aria-label="Close"
+                      color="inherit"
+                      onClick={() => setClassicModal(false)}
+                    >
+                      <Close className={classes.modalClose} />
+                    </IconButton>
+                    <h4 className={classes.modalTitle}>Modal title</h4>
+                  </DialogTitle>
+                  <DialogContent
+                    id="classic-modal-slide-description"
+                    className={classes.modalBody}
+                  >
+                    <p>
+                      Far far away, behind the word mountains, far from the
+                      countries Vokalia and Consonantia, there live the blind
+                      texts. Separated they live in Bookmarksgrove right at the
+                      coast of the Semantics, a large language ocean. A small
+                      river named Duden flows by their place and supplies it
+                      with the necessary regelialia. It is a paradisematic
+                      country, in which roasted parts of sentences fly into your
+                      mouth. Even the all-powerful Pointing has no control about
+                      the blind texts it is an almost unorthographic life One
+                      day however a small line of blind text by the name of
+                      Lorem Ipsum decided to leave for the far World of Grammar.
+                    </p>
+                  </DialogContent>
+                  <DialogActions className={classes.modalFooter}>
+                    <Button color="transparent" simple>
+                      Nice Button
+                    </Button>
+                    <Button
+                      onClick={() => setClassicModal(false)}
+                      color="danger"
+                      simple
+                    >
+                      Close
+                    </Button>
+                  </DialogActions>
+                </Dialog>
+              </GridItem> */}
+            </GridContainer>
+            <GridItem xs={12} sm={12} md={12}>
+              {/* <div className={classes.title}>
+                <h3>Datetime Picker</h3>
+              </div> */}
+              <GridContainer>
+                {/* <GridItem xs={12} sm={12} md={6}>
+                  <InputLabel className={classes.label}>
+                    Datetime Picker
+                  </InputLabel>
+                  <br />
+                  <FormControl fullWidth>
+                    <Datetime
+                      inputProps={{ placeholder: "Datetime Picker Here" }}
+                    />
+                  </FormControl>
+                </GridItem> */}
+              </GridContainer>
+            </GridItem>
+          </GridItem>
+          {/* <GridItem xs={12} sm={12} md={6}>
+            <div className={classes.title}>
+              <h3>Popovers</h3>
+            </div>
+            <Button onClick={(event) => setAnchorElLeft(event.currentTarget)}>
+              On left
+            </Button>
+            <Popover
+              classes={{
+                paper: classes.popover
+              }}
+              open={Boolean(anchorElLeft)}
+              anchorEl={anchorElLeft}
+              onClose={() => setAnchorElLeft(null)}
+              anchorOrigin={{
+                vertical: "center",
+                horizontal: "left"
+              }}
+              transformOrigin={{
+                vertical: "center",
+                horizontal: "right"
+              }}
+            >
+              <h3 className={classes.popoverHeader}>Popover on left</h3>
+              <div className={classes.popoverBody}>
+                Here will be some very useful information about his popover.
+                Here will be some very useful information about his popover.
+              </div>
+            </Popover>
+            <Button onClick={(event) => setAnchorElTop(event.currentTarget)}>
+              On top
+            </Button>
+            <Popover
+              classes={{
+                paper: classes.popover
+              }}
+              open={Boolean(anchorElTop)}
+              anchorEl={anchorElTop}
+              onClose={() => setAnchorElTop(null)}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "center"
+              }}
+              transformOrigin={{
+                vertical: "bottom",
+                horizontal: "center"
+              }}
+            >
+              <h3 className={classes.popoverHeader}>Popover on top</h3>
+              <div className={classes.popoverBody}>
+                Here will be some very useful information about his popover.
+              </div>
+            </Popover>
+            <Button onClick={(event) => setAnchorElBottom(event.currentTarget)}>
+              On bottom
+            </Button>
+            <Popover
+              classes={{
+                paper: classes.popover
+              }}
+              open={Boolean(anchorElBottom)}
+              anchorEl={anchorElBottom}
+              onClose={() => setAnchorElBottom(null)}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "center"
+              }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "center"
+              }}
+            >
+              <h3 className={classes.popoverHeader}>Popover on bottom</h3>
+              <div className={classes.popoverBody}>
+                Here will be some very useful information about his popover.
+              </div>
+            </Popover>
+            <Button onClick={(event) => setAnchorElRight(event.currentTarget)}>
+              On right
+            </Button>
+            <Popover
+              classes={{
+                paper: classes.popover
+              }}
+              open={Boolean(anchorElRight)}
+              anchorEl={anchorElRight}
+              onClose={() => setAnchorElRight(null)}
+              anchorOrigin={{
+                vertical: "center",
+                horizontal: "right"
+              }}
+              transformOrigin={{
+                vertical: "center",
+                horizontal: "left"
+              }}
+            >
+              <h3 className={classes.popoverHeader}>Popover on right</h3>
+              <div className={classes.popoverBody}>
+                Here will be some very useful information about his popover.
+              </div>
+            </Popover>
+            <br />
+            <br />
+            <div className={classes.title}>
+              <h3>Tooltips</h3>
+            </div>
+            <Tooltip
+              id="tooltip-left"
+              title="Tooltip on left"
+              placement="left"
+              classes={{ tooltip: classes.tooltip }}
+            >
+              <Button>On left</Button>
+            </Tooltip>
+            <Tooltip
+              id="tooltip-top"
+              title="Tooltip on top"
+              placement="top"
+              classes={{ tooltip: classes.tooltip }}
+            >
+              <Button>On top</Button>
+            </Tooltip>
+            <Tooltip
+              id="tooltip-bottom"
+              title="Tooltip on bottom"
+              placement="bottom"
+              classes={{ tooltip: classes.tooltip }}
+            >
+              <Button>On bottom</Button>
+            </Tooltip>
+            <Tooltip
+              id="tooltip-right"
+              title="Tooltip on right"
+              placement="right"
+              classes={{ tooltip: classes.tooltip }}
+            >
+              <Button>On right</Button>
+            </Tooltip>
+          </GridItem> */}
+        </GridContainer>
+        <div className={classes.title}>
+          <h3>Carousel</h3>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+-----------------------------------------
+(SectionPills.js section red box)
+
+{/* <GridItem xs={12} sm={12} md={12} lg={6}>
+              <NavPills
+                color="rose"
+                horizontal={{
+                  tabsGrid: { xs: 12, sm: 4, md: 4 },
+                  contentGrid: { xs: 12, sm: 8, md: 8 }
+                }}
+                tabs={[
+                  {
+                    tabButton: "Dashboard",
+                    tabIcon: Dashboard,
+                    tabContent: (
+                      <span>
+                        <p>
+                          Collaboratively administrate empowered markets via
+                          plug-and-play networks. Dynamically procrastinate B2C
+                          users after installed base benefits.
+                        </p>
+                        <br />
+                        <p>
+                          Dramatically visualize customer directed convergence
+                          without revolutionary ROI. Collaboratively
+                          administrate empowered markets via plug-and-play
+                          networks. Dynamically procrastinate B2C users after
+                          installed base benefits.
+                        </p>
+                        <br />
+                        <p>
+                          Dramatically visualize customer directed convergence
+                          without revolutionary ROI. Collaboratively
+                          administrate empowered markets via plug-and-play
+                          networks. Dynamically procrastinate B2C users after
+                          installed base benefits.
+                        </p>
+                      </span>
+                    )
+                  },
+                  {
+                    tabButton: "Schedule",
+                    tabIcon: Schedule,
+                    tabContent: (
+                      <span>
+                        <p>
+                          Efficiently unleash cross-media information without
+                          cross-media value. Quickly maximize timely
+                          deliverables for real-time schemas.
+                        </p>
+                        <br />
+                        <p>
+                          Dramatically maintain clicks-and-mortar solutions
+                          without functional solutions. Dramatically visualize
+                          customer directed convergence without revolutionary
+                          ROI. Collaboratively administrate empowered markets
+                          via plug-and-play networks. Dynamically procrastinate
+                          B2C users after installed base benefits.
+                        </p>
+                      </span>
+                    )
+                  }
+                ]}
+              />
+            </GridItem> */}
+            </GridContainer>

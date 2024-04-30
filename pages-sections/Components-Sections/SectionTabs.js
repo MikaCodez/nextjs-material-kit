@@ -82,10 +82,10 @@ export default function SectionTabs() {
               />
             </GridItem>
             <GridItem xs={12} sm={12} md={6}>
-              <h3>
+              {/* <h3>
                 <small>Tabs on Plain Card</small>
-              </h3>
-              <CustomTabs
+              </h3> */}
+              {/* <CustomTabs
                 plainTabs
                 headerColor="danger"
                 tabs={[
@@ -135,7 +135,7 @@ export default function SectionTabs() {
                     )
                   }
                 ]}
-              />
+              /> */}
             </GridItem>
           </GridContainer>
         </div>

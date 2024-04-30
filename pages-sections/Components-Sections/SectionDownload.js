@@ -17,7 +17,7 @@ export default function SectionDownload() {
     <div className={classes.section}>
       <div className={classes.container}>
         <GridContainer className={classes.textCenter} justify="center">
-          <GridItem xs={12} sm={12} md={8}>
+          {/* <GridItem xs={12} sm={12} md={8}>
             <h2>More Articles above</h2>
             <h4>
               Cause if you do, it can be yours for FREE. Hit the buttons below
@@ -25,7 +25,7 @@ export default function SectionDownload() {
               have the Bootstrap 4 version on plain HTML. Start a new project or
               give an old Bootstrap project a new look!
             </h4>
-          </GridItem>
+          </GridItem> */}
           <GridItem xs={12} sm={8} md={6}>
             {/* <Button
               color="primary"
@@ -35,10 +35,10 @@ export default function SectionDownload() {
             >
               Free NextJS Download
             </Button> */}
-            <Button
+            {/* <Button
             >
               Free React Downoad
-            </Button>
+            </Button> */}
           </GridItem>
         </GridContainer>
         <br />

@@ -81,7 +81,7 @@ export default function SectionNavbars() {
               }
             />
           </GridItem>
-          <GridItem xs={12} sm={12} md={6}>
+          {/* <GridItem xs={12} sm={12} md={6}>
             <div className={classes.title}>
               <h3>Menu with Icons</h3>
             </div>
@@ -125,7 +125,7 @@ export default function SectionNavbars() {
                 </List>
               }
             />
-          </GridItem>
+          </GridItem> */}
         </GridContainer>
         <div className={classes.title}>
           <h3>Navigation</h3>
@@ -136,7 +136,7 @@ export default function SectionNavbars() {
           className={classes.navigation}
           style={{ backgroundImage: "url('/img/bg.jpg')" }}
         >
-          <Header
+          {/* <Header
             brand="Brand"
             color="rose"
             leftLinks={
@@ -184,8 +184,8 @@ export default function SectionNavbars() {
                 </Button>
               </div>
             }
-          />
-          <Header
+          /> */}
+          {/* <Header
             brand="Info Color"
             color="info"
             rightLinks={
@@ -222,8 +222,8 @@ export default function SectionNavbars() {
                 </ListItem>
               </List>
             }
-          />
-          <Header
+          /> */}
+          {/* <Header
             brand="Primary Color"
             color="primary"
             rightLinks={
@@ -260,8 +260,8 @@ export default function SectionNavbars() {
                 </ListItem>
               </List>
             }
-          />
-          <Header
+          /> */}
+          {/* <Header
             brand="Navbar with notifications"
             color="dark"
             rightLinks={
@@ -325,8 +325,8 @@ export default function SectionNavbars() {
                 </ListItem>
               </List>
             }
-          />
-          <Header
+          /> */}
+          {/* <Header
             brand="Navbar with profile"
             rightLinks={
               <List className={classes.list}>
@@ -363,8 +363,8 @@ export default function SectionNavbars() {
                 </ListItem>
               </List>
             }
-          />
-          <Header
+          /> */}
+          {/* <Header
             brand="Transparent"
             color="transparent"
             rightLinks={
@@ -425,7 +425,7 @@ export default function SectionNavbars() {
                 </ListItem>
               </List>
             }
-          />
+          /> */}
         </div>
       </div>
     </div>

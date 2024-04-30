@@ -50,7 +50,7 @@ export default function SectionJavascript() {
               <h3>Modal</h3>
             </div>
             <GridContainer>
-              <GridItem xs={12} sm={12} md={6} lg={4}>
+              {/* <GridItem xs={12} sm={12} md={6} lg={4}>
                 <Button
                   color="primary"
                   block
@@ -118,14 +118,14 @@ export default function SectionJavascript() {
                     </Button>
                   </DialogActions>
                 </Dialog>
-              </GridItem>
+              </GridItem> */}
             </GridContainer>
             <GridItem xs={12} sm={12} md={12}>
-              <div className={classes.title}>
+              {/* <div className={classes.title}>
                 <h3>Datetime Picker</h3>
-              </div>
+              </div> */}
               <GridContainer>
-                <GridItem xs={12} sm={12} md={6}>
+                {/* <GridItem xs={12} sm={12} md={6}>
                   <InputLabel className={classes.label}>
                     Datetime Picker
                   </InputLabel>
@@ -135,11 +135,11 @@ export default function SectionJavascript() {
                       inputProps={{ placeholder: "Datetime Picker Here" }}
                     />
                   </FormControl>
-                </GridItem>
+                </GridItem> */}
               </GridContainer>
             </GridItem>
           </GridItem>
-          <GridItem xs={12} sm={12} md={6}>
+          {/* <GridItem xs={12} sm={12} md={6}>
             <div className={classes.title}>
               <h3>Popovers</h3>
             </div>
@@ -277,7 +277,7 @@ export default function SectionJavascript() {
             >
               <Button>On right</Button>
             </Tooltip>
-          </GridItem>
+          </GridItem> */}
         </GridContainer>
         <div className={classes.title}>
           <h3>Carousel</h3>

@@ -114,7 +114,7 @@ export default function SectionPills() {
                 ]}
               />
             </GridItem>
-            <GridItem xs={12} sm={12} md={12} lg={6}>
+            {/* <GridItem xs={12} sm={12} md={12} lg={6}>
               <NavPills
                 color="rose"
                 horizontal={{
@@ -175,7 +175,7 @@ export default function SectionPills() {
                   }
                 ]}
               />
-            </GridItem>
+            </GridItem> */}
           </GridContainer>
         </div>
       </div>
