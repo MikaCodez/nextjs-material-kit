@@ -67,7 +67,7 @@ export default function SectionLogin() {
                 </CardHeader>
                 <p className={classes.divider}>Or Be Classical</p>
                 <CardBody>
-                  <CustomInput
+                  {/* <CustomInput
                     labelText="First Name..."
                     id="first"
                     formControlProps={{
@@ -81,7 +81,7 @@ export default function SectionLogin() {
                         </InputAdornment>
                       )
                     }}
-                  />
+                  /> */}
                   <CustomInput
                     labelText="Email..."
                     id="email"

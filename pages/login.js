@@ -35,7 +35,7 @@ export default function LoginPage(props) {
       <Header
         absolute
         color="transparent"
-        brand="NextJS Material Kit"
+        brand="LSN Global"
         rightLinks={<HeaderLinks />}
         {...rest}
       />
@@ -86,7 +86,7 @@ export default function LoginPage(props) {
                   </CardHeader>
                   <p className={classes.divider}>Or Be Classical</p>
                   <CardBody>
-                    <CustomInput
+                    {/* <CustomInput
                       labelText="First Name..."
                       id="first"
                       formControlProps={{
@@ -100,7 +100,7 @@ export default function LoginPage(props) {
                           </InputAdornment>
                         )
                       }}
-                    />
+                    /> */}
                     <CustomInput
                       labelText="Email..."
                       id="email"

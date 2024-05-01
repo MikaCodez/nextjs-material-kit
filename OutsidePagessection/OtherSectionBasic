@@ -1488,3 +1488,21 @@ export default function SectionJavascript() {
               />
             </GridItem> */}
             </GridContainer>
+
+            --------------------------------------
+            (Login.js section below)
+            {/* <CustomInput
+                    labelText="First Name..."
+                    id="first"
+                    formControlProps={{
+                      fullWidth: true
+                    }}
+                    inputProps={{
+                      type: "text",
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <People className={classes.inputIconsColor} />
+                        </InputAdornment>
+                      )
+                    }}
+                  /> */}

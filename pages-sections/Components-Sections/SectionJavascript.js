@@ -41,13 +41,13 @@ export default function SectionJavascript() {
   return (
     <div className={classes.section}>
       <div className={classes.container}>
-        <div className={classes.title}>
+        {/* <div className={classes.title}>
           <h2>Javascript components</h2>
-        </div>
+        </div> */}
         <GridContainer>
           <GridItem xs={12} sm={12} md={6}>
             <div className={classes.title}>
-              <h3>Modal</h3>
+              {/* <h3>Modal</h3> */}
             </div>
             <GridContainer>
               {/* <GridItem xs={12} sm={12} md={6} lg={4}>

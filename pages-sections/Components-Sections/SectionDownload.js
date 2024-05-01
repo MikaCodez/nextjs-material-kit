@@ -75,7 +75,7 @@ export default function SectionDownload() {
             </Button>
           </GridItem> */}
         </GridContainer>
-        <div className={classes.textCenter + " " + classes.sharingArea}>
+        {/* <div className={classes.textCenter + " " + classes.sharingArea}>
           <GridContainer justify="center">
            
           </GridContainer>
@@ -92,7 +92,7 @@ export default function SectionDownload() {
           <Button color="github">
             <i className={classes.socials + " fab fa-github"} /> Star
           </Button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

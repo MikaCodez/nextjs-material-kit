@@ -238,3 +238,7 @@ Facebook: <https://www.facebook.com/CreativeTim>
 Dribbble: <https://dribbble.com/creativetim>
 
 Instagram: <https://www.instagram.com/CreativeTimOfficial>
+
+
+------------------------------
+(OtherSectionBasic.js is where all Toggle line commented out code)

@@ -24,7 +24,7 @@ export default function SectionExamples() {
             <Link href="/landing">
               <a className={classes.link}>
                 <img
-                  src="/img/LSN-platform.png"
+                  src="/img/LSN-Global32.png"
                   alt="..."
                   className={
                     classes.imgRaised +
