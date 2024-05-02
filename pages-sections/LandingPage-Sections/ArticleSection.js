@@ -34,20 +34,21 @@ export default function MemberSection() {
             <Card plain>
               <GridItem xs={14} sm={14} md={8} className={classes.itemGrid}>
                 <img
-                  src="/img/faces/sectionimage3.webp"
+                  src="/img/wnew1.webp"
                   alt="..."
                   className={classes.imgRounded + " " + classes.imgFluid}
                 />
               </GridItem>
               <h4 className={classes.cardTitle}>
-                Curated Clutter
+              Jennifer Coolidge’s rebirth
                 <br />
                 <small className={classes.smallTitle}>Model</small>
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                Culture is experiencing a move from clean to cluttered, but this consumer shift is not just about aesthetics.
-                </p>
+                The 61-year-old American actress mostly known for her comedy performances
+                in the early 2000s in American Pie and Legally Blonde recently found fame
+                among a new audience thanks to her award-winning performance in HBO's The White Lotus. T                </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
                 <Button
@@ -78,20 +79,21 @@ export default function MemberSection() {
             <Card plain>
               <GridItem xs={14} sm={14} md={8} className={classes.itemGrid}>
                 <img
-                  src="/img/faces/sectionpic1.webp"
+                  src="/img/wnew2.webp"
                   alt="..."
                   className={classes.imgRounded + " " + classes.imgFluid}
                 />
               </GridItem>
               <h4 className={classes.cardTitle}>
-                Emotional Support Sips
-                <br />
+              No retirement for older models                <br />
                 <small className={classes.smallTitle}>Designer</small>
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                Alongside health benefits like improved cognition, better digestion and increased energy,
-                a new host of functional drinks focus on supporting emoti...
+                Although there are no official figures on a tangible return on investment regarding models’ demographics,
+                The Wall Street Journal reports a 'sky-high demand for older models in their 60s, 70s, 80s and even 90s'.
+                While premium, entry-level and fast fashion players are starting to catch up, high fashion labels such as
+                Balenciaga and Marine Serre have put models over 60 years old on their catwalks in the past five years.
                 </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
@@ -116,20 +118,21 @@ export default function MemberSection() {
             <Card plain>
               <GridItem xs={14} sm={14} md={8} className={classes.itemGrid}>
                 <img
-                  src="/img/faces/sectionpic2.webp"
+                  src="/img/wnew3.webp"
                   alt="..."
                   className={classes.imgRounded + " " + classes.imgFluid}
                 />
               </GridItem>
               <h4 className={classes.cardTitle}>
-                Flower Article
+              Senior TikTok superstars
                 <br />
                 <small className={classes.smallTitle}>Model</small>
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                If happiness is a long bike ride with a good destination, these 
-                fashion innovators are cycling straight towards sustainability, style and inclusivi...
+                Who knew a 92-year-old grandma could turn into a global sensation on TikTok? 
+                Certainly not full-time influencer Mrs Droniak, who is already considered iconic
+                by her young audience who live for her irreverence and motivational mottos. 
                 </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
