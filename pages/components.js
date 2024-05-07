@@ -44,11 +44,11 @@ export default function Components(props) {
         color="transparent"
         changeColorOnScroll={{
           height: 400,
-          color: "white"
+          color: "red"
         }}
         {...rest}
       />
-      <Parallax image="/img/bg2.jpg">
+      <Parallax image="/img/LogoIcons/bg2.jpg">
         <div className={classes.container}>
           <GridContainer>
             <GridItem>

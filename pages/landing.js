@@ -14,6 +14,7 @@ import GridItem from "/components/Grid/GridItem.js";
 import Button from "/components/CustomButtons/Button.js";
 import HeaderLinks from "/components/Header/HeaderLinks.js";
 import Parallax from "/components/Parallax/Parallax.js";
+import logo from "../public/img/LogoIcons/logo.png";
 
 import styles from "/styles/jss/nextjs-material-kit/pages/landingPage.js";
 
@@ -34,12 +35,12 @@ export default function LandingPage(props) {
       <Header
         color="transparent"
         routes={dashboardRoutes}
-        brand="LSN Global"
+        brand={<img src={logo} alt="LSN Global Logo" />}
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
           height: 400,
-          color: "white"
+          color: "black"
         }}
         {...rest}
       />
