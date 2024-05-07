@@ -127,6 +127,7 @@ export default function SectionNavbars() {
             />
           </GridItem> */}
         </GridContainer>
+
       </div>
       <div id="navbar" className={classes.navbar}>
         <div

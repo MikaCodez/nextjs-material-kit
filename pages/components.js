@@ -27,6 +27,7 @@ import SectionCompletedExamples from "/pages-sections/Components-Sections/Sectio
 import SectionLogin from "/pages-sections/Components-Sections/SectionLogin.js";
 import SectionExamples from "/pages-sections/Components-Sections/SectionExamples.js";
 import SectionDownload from "/pages-sections/Components-Sections/SectionDownload.js";
+import VideoSection from "/pages-sections/Components-Sections/VideoSection.js";
 
 import styles from "/styles/jss/nextjs-material-kit/pages/components.js";
 
@@ -52,6 +53,7 @@ export default function Components(props) {
         <div className={classes.container}>
           <GridContainer>
             <GridItem>
+            <VideoSection />
               <div className={classes.brand}>
                 <h1 className={classes.title}>LSN Global.</h1>
                 <h3 className={classes.subtitle}>
